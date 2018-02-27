@@ -6,6 +6,7 @@ class List extends React.Component {
 		return (
 		<div class="todo-list">
 			<label><input type="checkbox"/>Do something</label>
+			<label><input type="checkbox"/>Do something else</label>
 		</div>
 		);
 	}
