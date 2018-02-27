@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import List from './components/list.js'
 
-export default class App extends React.PureComponent {
+class App extends React.Component {
   render() {
-    return <div>I'am App</div>;
+    return (
+        <List />
+    );
   }
 }
 

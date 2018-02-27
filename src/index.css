@@ -6,4 +6,11 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
+  margin:0;
+  padding:0;
+}
+.todo-list input {
+  margin-right:5px;
+  display: inline-block;
+  vertical-align: middle;
 }
