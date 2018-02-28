@@ -9,7 +9,7 @@ class List extends React.Component {
 		return(
 			<ul>
 				{
-					this.props.items.map((item, index) => <li key={index}><div className='item-list'>{item}</div><a href='#' onClick={this.delete.bind(this, index)}>Delete</a></li>)
+					this.props.items.map((item, index) => <li key={index}><div className='item-list'>{item}</div><a href='#' className='delete_btn' onClick={this.delete.bind(this, index)}>Delete</a></li>)
 				}
 			</ul>
 		)

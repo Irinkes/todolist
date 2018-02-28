@@ -43,7 +43,7 @@ class App extends React.Component {
 	render(){
 		console.log(this.state.items);
 		return (
-			<div>
+			<div className='todo-list-wrapper'>
 				<UserInput onSubmit = {this.onSubmit}
 						   value={this.state.userText}
 						   onChange={this.onChange} />
