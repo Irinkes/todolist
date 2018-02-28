@@ -7,6 +7,6 @@ const UserInput = props => (
 		<button type='submit'>Add</button>
 	</form>
 );
-
+2
 
 export default UserInput;

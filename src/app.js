@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import List from './components/list'
 import UserInput from "./components/userInput";
-// import UserInput from './components/userInput'
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
 		}
 		this.onSubmit = this.onSubmit.bind(this)
 		this.onChange = this.onChange.bind(this)
-		this.onDelete = this.onDelete.bind(this)
+		this.delete = this.delete.bind(this)
 	}
 
 	onChange(event) {
@@ -21,29 +21,27 @@ class App extends React.Component {
 	}
 
 	onSubmit(event) {
-		event.preventDefault()
 		this.setState({
 			userText: '',
 			items: [...this.state.items, this.state.userText]
 		})
 
-		console.log(this.state.items);
-
 	}
 
-	onDelete(index){
+	delete(index){
 		let itemsArr = this.state.items
-		itemsArr = itemsArr.splice(index, 1)
-		console.log(itemsArr);
+		itemsArr.splice(index, 1)
 		this.setState({
 			items: itemsArr
 		})
+		console.log(this.state.items);
 	}
 
 
 
 
 	render(){
+		console.log(this.state.items);
 		return (
 			<div>
 				<UserInput onSubmit = {this.onSubmit}
@@ -51,7 +49,7 @@ class App extends React.Component {
 						   onChange={this.onChange} />
 
 				<List items={this.state.items}
-					  onDelete={this.onDelete}/>
+					  delete={this.delete}/>
 
 			</div>
 

@@ -9,8 +9,8 @@ html {
   margin:0;
   padding:0;
 }
-.todo-list input {
-  margin-right:5px;
+
+.item-list {
   display: inline-block;
-  vertical-align: middle;
+  margin-right: 10px;
 }
