@@ -4,32 +4,36 @@ import List from './components/list'
 import UserInput from "./components/userInput";
 
 
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			userText: '',
-			items:[]
+			items: []
 		}
 		this.onSubmit = this.onSubmit.bind(this)
 		this.onChange = this.onChange.bind(this)
-		this.delete = this.delete.bind(this)
+		this.onDelete = this.onDelete.bind(this)
+		this.onEdit = this.onEdit.bind(this)
 	}
 
 	onChange(event) {
 		this.setState({userText: event.target.value});
 	}
 
+
 	onSubmit(event) {
+		event.preventDefault();
+
 		this.setState({
 			userText: '',
 			items: [...this.state.items, this.state.userText]
 		})
-
 	}
 
-	delete(index){
-		let itemsArr = this.state.items
+	onDelete(index){
+		let itemsArr = this.state.items;
 		itemsArr.splice(index, 1)
 		this.setState({
 			items: itemsArr
@@ -37,11 +41,12 @@ class App extends React.Component {
 		console.log(this.state.items);
 	}
 
-
+	onEdit(index){
+		console.log(index);
+	}
 
 
 	render(){
-		console.log(this.state.items);
 		return (
 			<div className='todo-list-wrapper'>
 				<UserInput onSubmit = {this.onSubmit}
@@ -49,7 +54,9 @@ class App extends React.Component {
 						   onChange={this.onChange} />
 
 				<List items={this.state.items}
-					  delete={this.delete}/>
+					  onDelete={this.onDelete}
+					  onEdit={this.onEdit}
+					  />
 
 			</div>
 
