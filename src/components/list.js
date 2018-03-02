@@ -18,8 +18,8 @@ class List extends React.Component {
 				{
 					this.props.items.map((item, index) =>
 						<tr key={index}>
-							<ListRow index={index} item={item}/>
-							<td><a href='#' className='edit_btn' onClick={() => this.onEdit(index)}>Edit</a></td>
+							<ListRow index={index} item={item} />
+							{/*<td><a href='#' className='edit_btn' onClick={() => this.onEdit(index)}>Edit</a></td>*/}
 							<td><a href='#' className='delete_btn' onClick={() => this.onDelete(index)}>Delete</a></td>
 						</tr>)
 				}

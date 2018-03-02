@@ -38,6 +38,7 @@ export default class List extends React.Component {
 
 	simpleView() {
 		const item = this.props.item;
+		console.log(item.type)
 		return(
 			<td>
 				<div>

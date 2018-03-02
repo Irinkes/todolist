@@ -18,8 +18,10 @@ class App extends React.Component {
 		this.onEdit = this.onEdit.bind(this)
 	}
 
-	onChange(event) {
-		this.setState({userText: event.target.value});
+	onChange(item,index) {
+		const items = this.state.items.slice();
+		items[index] = item;
+		this.setState({ items });
 	}
 
 

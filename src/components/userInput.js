@@ -36,8 +36,7 @@ class UserInput extends React.Component {
 			<div className='todolist_form'>
 				<TextBox
 					value={toDoText}
-					// onChange={value => this.setState({ toDoText: value })}
-					onChange={this.props.onChange}
+					onChange={value => this.setState({ toDoText: value })}
 				/>
 				<SelectBox
 					options={types}
