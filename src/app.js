@@ -23,14 +23,13 @@ class App extends React.Component {
 	}
 
 
-	onSubmit(event) {
-		event.preventDefault();
-
+	onSubmit(todo){
+		const items = this.state.items;
 		this.setState({
-			userText: '',
-			items: [...this.state.items, this.state.userText]
-		})
-	}
+			items: [...items, todo],
+		});
+		console.log(items);
+	};
 
 	onDelete(index){
 		let itemsArr = this.state.items;

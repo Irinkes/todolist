@@ -16,11 +16,12 @@ class List extends React.Component {
 	onDelete(index){
 		this.props.onDelete(index);
 	}
-	onEdit() {
+	onEdit(index) {
 		this.setState({
 			editing: true
 		})
-
+		console.log(this.state.editing);
+		this.props.onEdit(index);
 	}
 
 
@@ -32,8 +33,7 @@ class List extends React.Component {
 				{
 					this.props.items.map((item, index) =>
 						<tr key={index}>
-							{/*<ListRow index={index} item={item} editing={this.state.editing} newid={index}/>*/}
-							<td><div className='item-list'>{item}</div></td>
+							<ListRow index={index} item={item} editing={this.state.editing}/>
 							<td><a href='#' className='edit_btn' onClick={() => this.onEdit(index)}>Edit</a></td>
 							<td><a href='#' className='delete_btn' onClick={() => this.onDelete(index)}>Delete</a></td>
 						</tr>)
