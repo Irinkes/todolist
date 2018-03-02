@@ -14,7 +14,7 @@ class UserInput extends React.Component {
 		this.onAddItem = this.onAddItem.bind(this)
 	}
 
-	onAddItem () {
+	onAddItem =() =>{
 		const newItem = {
 			text: this.state.toDoText,
 			type: this.state.toDoType,
@@ -33,7 +33,7 @@ class UserInput extends React.Component {
 		const toDoText = this.state.toDoText;
 		const toDoType = this.state.toDoType;
 		return (
-			<form className='todolist_form'>
+			<div className='todolist_form'>
 				<TextBox
 					value={toDoText}
 					// onChange={value => this.setState({ toDoText: value })}
@@ -45,7 +45,7 @@ class UserInput extends React.Component {
 					onChange={value => this.setState({ toDoType: value })}
 				/>
 				<button className='add_btn' onClick={this.onAddItem}>Add</button>
-			</form>
+			</div>
 		)
 	}
 }

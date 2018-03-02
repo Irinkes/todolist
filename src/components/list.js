@@ -4,25 +4,10 @@ import ListRow from './listRow'
 
 class List extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			editing: false
-		}
-
-
-	}
-
 	onDelete(index){
 		this.props.onDelete(index);
 	}
-	onEdit(index) {
-		this.setState({
-			editing: true
-		})
-		console.log(this.state.editing);
-		this.props.onEdit(index);
-	}
+
 
 
 	render() {
@@ -33,7 +18,7 @@ class List extends React.Component {
 				{
 					this.props.items.map((item, index) =>
 						<tr key={index}>
-							<ListRow index={index} item={item} editing={this.state.editing}/>
+							<ListRow index={index} item={item}/>
 							<td><a href='#' className='edit_btn' onClick={() => this.onEdit(index)}>Edit</a></td>
 							<td><a href='#' className='delete_btn' onClick={() => this.onDelete(index)}>Delete</a></td>
 						</tr>)

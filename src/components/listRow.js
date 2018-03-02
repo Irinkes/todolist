@@ -38,12 +38,11 @@ export default class List extends React.Component {
 
 	simpleView() {
 		const item = this.props.item;
-		const todo = this.props.item;
 		return(
 			<td>
 				<div>
 					<span>{item.type}</span>
-					<span>{item}</span>
+					<span>{item.text}</span>
 				</div>
 			</td>
 		)
