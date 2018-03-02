@@ -13,6 +13,25 @@ export default class List extends React.Component {
 			toDoType: this.props.item.type,
 		};
 	}
+
+	onCancel() {
+		this.setState({
+			editing: false,
+			toDoText: this.props.item.text,
+			toDoType: this.props.item.type,
+			}
+		)
+	}
+	onChangeHandler () {
+		const onChangeTodo = this.props.onChange;
+		const index = this.props.index;
+		const todo = {
+			text: this.state.toDoText,
+			type: this.state.toDoType,
+		};
+		onChangeTodo(todo, index);
+	};
+
 	editView(){
 		const type = this.state.toDoType;
 		const text = this.state.toDoText;
@@ -28,8 +47,8 @@ export default class List extends React.Component {
 						value={text}
 						onChange={value => this.setState({ toDoText: value })}
 					/>
-					{/*<Button onClick={this.onChangeTodoHandler}>Сохранить</Button>*/}
-					{/*<Button onClick={this.onCancelHandler}>Отмена</Button>*/}
+					<Button onClick={this.onChangeHandler}>Сохранить</Button>
+					<Button onClick={this.onCancel}>Отмена</Button>
 				</div>
 			</td>
 		)
@@ -43,7 +62,7 @@ export default class List extends React.Component {
 				<div>
 					<span>{item.type}</span>
 					<span>{item.text}</span>
-					<Button onClick={() => this.setState({ isEditable: true })}>
+					<Button onClick={() => this.setState({ editing: true })}>
 						Изменить
 					</Button>
 					<Button onClick={this.props.onDelete}>Удалить</Button>

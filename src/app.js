@@ -56,7 +56,7 @@ class App extends React.Component {
 
 				<List items={this.state.items}
 					  onDelete={this.onDelete}
-					  onEdit={this.onEdit}
+					  onChange={this.onChange}
 					  />
 
 			</div>
