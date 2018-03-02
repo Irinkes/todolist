@@ -5,6 +5,5 @@ export default function TextBox(props) {
 	const value = props.value;
 	return (
 		<input type="text" value={value} onChange={e => onChange(e.target.value)} />
-		//{/*<input type="text" value={value} onChange={onChange} />*/}
 	);
 }
