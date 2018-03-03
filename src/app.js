@@ -18,7 +18,6 @@ class App extends React.Component {
 	}
 
 	onChange(item,index) {
-		console.log(item,index);
 		const items = this.state.items.slice();
 		items[index] = item;
 		this.setState({ items }, () => console.log(this.state.items));
@@ -34,7 +33,7 @@ class App extends React.Component {
 	};
 
 	onDelete(index){
-		let itemsArr = this.state.items.slice();
+		const itemsArr = [...this.state.items];
 		itemsArr.splice(index, 1)
 		this.setState({
 			items: itemsArr

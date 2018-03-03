@@ -34,3 +34,7 @@ ul {
 .btn{
   margin-right: 5px;
 }
+.radio-boxes-wrapper {
+  float: right;
+  text-align: right;
+}
