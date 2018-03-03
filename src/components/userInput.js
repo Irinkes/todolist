@@ -44,6 +44,7 @@ class UserInput extends React.Component {
 					onChange={value => this.setState({ toDoType: value })}
 				/>
 				<button className='add_btn' onClick={this.onAddItem}>Add</button>
+
 			</div>
 		)
 	}

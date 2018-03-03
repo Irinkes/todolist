@@ -41,38 +41,45 @@ export default class List extends React.Component {
 		const type = this.state.toDoType;
 		const text = this.state.toDoText;
 		return(
-			<td>
-				<div>
+			<tr>
+				<td>
 					<SelectBox
 						value={type}
 						options={types}
 						onChange={value => this.setState({ toDoType: value })}
 					/>
+				</td>
+				<td>
 					<TextBox
 						value={text}
 						onChange={value => this.setState({ toDoText: value })}
 					/>
+				</td>
+				<td>
 					<Button onClick={this.onChangeHandler}>Сохранить</Button>
 					<Button onClick={this.onCancel}>Отмена</Button>
-				</div>
-			</td>
+				</td>
+			</tr>
 		)
 	}
 
 	simpleView() {
 		const item = this.props.item;
-		console.log(item.type)
 		return(
-			<td>
-				<div>
+			<tr>
+				<td>
 					<span className='importance_type'>{item.type}</span>
+				</td>
+				<td>
 					<span>{item.text}</span>
+				</td>
+				<td>
 					<Button onClick={() => this.setState({ editing: true })}>
 						Изменить
 					</Button>
 					<Button onClick={this.props.onDelete}>Удалить</Button>
-				</div>
-			</td>
+				</td>
+			</tr>
 		)
 	}
 	render() {

@@ -10,7 +10,7 @@ html {
   padding:0;
 }
 .todo-list-wrapper {
-  width:300px;
+  width:500px;
   margin: 0 auto;
 }
 .item-list {
@@ -35,6 +35,8 @@ ul {
   margin-right: 5px;
 }
 .radio-boxes-wrapper {
-  float: right;
   text-align: right;
+}
+.todo-table {
+  float: left;
 }

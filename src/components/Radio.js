@@ -8,8 +8,10 @@ export default function Radio(props) {
 			{types.map((type,index) =>
 				<div key={`${type.value}${type.label}`}>
 					<label htmlFor={type.value}>{type.label}</label>
-					<input type="radio" id={type.value}
-						   name="importanceType" value={type.value} />
+					<input type="radio"
+						   id={type.value}
+						   name="importanceType"
+						   value={type.value} />
 				</div>
 			)}
 		</div>

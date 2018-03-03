@@ -18,7 +18,7 @@ class App extends React.Component {
 	}
 
 	onChange(item,index) {
-		const items = this.state.items.slice();
+		const items = [...this.state.items];
 		items[index] = item;
 		this.setState({ items }, () => console.log(this.state.items));
 	}

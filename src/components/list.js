@@ -1,6 +1,7 @@
 import React from 'react';
 import ListRow from './ListRow'
 import TextBox from './Textbox'
+import Radio from './Radio'
 
 
 class List extends React.Component {
@@ -24,20 +25,26 @@ class List extends React.Component {
 		const onChange = this.props.onChange;
 		return(
 			<div>
-				<TextBox
-					value={this.state.search}
-					onChange={value => this.setState({ search: value })}
-				/>
-				<table className="todo-table">
-					<tbody>
-					{
-						items.map((item, index) =>
-							<tr key={index}>
-								<ListRow index={index} item={item} onDelete={() => this.onDelete(index)} onChange={onChange}/>
-							</tr>)
-					}
-					</tbody>
-				</table>
+			<table className="todo-table">
+				<tbody>
+				<tr>
+					<th>Приоритет</th>
+					<th>Задание</th>
+					<th>
+						<TextBox
+						value={this.state.search}
+						onChange={value => this.setState({ search: value })}
+					/>
+					</th>
+				</tr>
+				{
+					items.map((item, index) =>
+						<ListRow key={`${item.value}${item.label}`} index={index} item={item} onDelete={() => this.onDelete(index)} onChange={onChange}/>
+					)
+				}
+				</tbody>
+			</table>
+			<Radio />
 			</div>
 		)
 	}
