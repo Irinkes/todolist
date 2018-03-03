@@ -1,5 +1,5 @@
 import React from 'react';
-import ListRow from './listRow'
+import ListRow from './ListRow'
 import TextBox from './Textbox'
 
 
@@ -14,8 +14,6 @@ class List extends React.Component {
 	onDelete(index){
 		this.props.onDelete(index);
 	}
-
-
 
 	render() {
 		const search = this.state.search;
