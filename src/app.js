@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './components/list'
-import UserInput from "./components/userInput";
+import List from './components/List'
+import UserInput from "./components/UserInput";
 
 
 
@@ -34,12 +34,11 @@ class App extends React.Component {
 	};
 
 	onDelete(index){
-		let itemsArr = this.state.items;
+		let itemsArr = this.state.items.slice();
 		itemsArr.splice(index, 1)
 		this.setState({
 			items: itemsArr
 		})
-		console.log(this.state.items);
 	}
 
 
