@@ -28,3 +28,9 @@ html {
 ul {
   list-style-type: none;
 }
+.importance_type {
+  margin-right: 5px;
+}
+.btn{
+  margin-right: 5px;
+}

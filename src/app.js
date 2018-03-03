@@ -15,13 +15,13 @@ class App extends React.Component {
 		this.onSubmit = this.onSubmit.bind(this)
 		this.onChange = this.onChange.bind(this)
 		this.onDelete = this.onDelete.bind(this)
-		this.onEdit = this.onEdit.bind(this)
 	}
 
 	onChange(item,index) {
+		console.log(item,index);
 		const items = this.state.items.slice();
 		items[index] = item;
-		this.setState({ items });
+		this.setState({ items }, () => console.log(this.state.items));
 	}
 
 
@@ -40,10 +40,6 @@ class App extends React.Component {
 			items: itemsArr
 		})
 		console.log(this.state.items);
-	}
-
-	onEdit(index){
-		console.log(index);
 	}
 
 

@@ -12,6 +12,8 @@ export default class List extends React.Component {
 			toDoText: this.props.item.text,
 			toDoType: this.props.item.type,
 		};
+		this.onChangeHandler= this.onChangeHandler.bind(this);
+		this.onCancel= this.onCancel.bind(this);
 	}
 
 	onCancel() {
@@ -30,6 +32,9 @@ export default class List extends React.Component {
 			type: this.state.toDoType,
 		};
 		onChangeTodo(todo, index);
+		this.setState({
+			editing:false
+		})
 	};
 
 	editView(){
@@ -60,7 +65,7 @@ export default class List extends React.Component {
 		return(
 			<td>
 				<div>
-					<span>{item.type}</span>
+					<span className='importance_type'>{item.type}</span>
 					<span>{item.text}</span>
 					<Button onClick={() => this.setState({ editing: true })}>
 						Изменить
