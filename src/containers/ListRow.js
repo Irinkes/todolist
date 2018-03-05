@@ -55,7 +55,7 @@ export default class List extends React.Component {
 						onChange={value => this.setState({ toDoText: value })}
 					/>
 				</td>
-				<td>
+				<td className='inside-btns'>
 					<Button onClick={this.onChangeHandler}>Сохранить</Button>
 					<Button onClick={this.onCancel}>Отмена</Button>
 				</td>
@@ -73,7 +73,7 @@ export default class List extends React.Component {
 				<td>
 					<span>{item.text}</span>
 				</td>
-				<td>
+				<td className='inside-btns'>
 					<Button onClick={() => this.setState({ editing: true })}>
 						Изменить
 					</Button>

@@ -76,5 +76,11 @@ ul {
   margin-top: 38px;
   overflow: hidden;
 }
+.inside-btns button {
+  border: none;
+  background: none;
+  color: #2196f3;
+  text-transform: uppercase;
+}
 
 

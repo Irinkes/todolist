@@ -45,17 +45,17 @@ class App extends React.Component {
 		return (
 			<div className='todo-list-wrapper'>
 				<UserInput onSubmit = {this.onSubmit}
-						   value={this.state.userText}
-						   onChange={this.onChange} />
+									 value={this.state.userText}
+									 onChange={this.onChange} />
 
 				<List items={this.state.items}
-					  onDelete={this.onDelete}
-					  onChange={this.onChange}
+					  	onDelete={this.onDelete}
+					  	onChange={this.onChange}
 					  />
 
 			</div>
 
-		);
+		)
 	}
 }
 
