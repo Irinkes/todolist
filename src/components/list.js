@@ -9,7 +9,17 @@ class List extends React.Component {
 	  super(props);
 	  this.state = {
 	    search: undefined,
+	  	searchType:undefined
 	  };
+		this.onChangeRadio = this.onChangeRadio.bind(this)
+	  }
+
+
+	onChangeRadio(value){
+		const searchType = value;
+		this.setState({
+			searchType:searchType
+		});
 	}
 
 	onDelete(index){
@@ -18,9 +28,14 @@ class List extends React.Component {
 
 	render() {
 		const search = this.state.search;
-		const items = search
-			? this.props.items.filter(item => item.text.indexOf(search) != -1)
+		const searchType = this.state.searchType;
+		let items = search
+			? this.props.items.filter(item => item.text.indexOf(search) != -1 )
 			: this.props.items;
+
+		items = searchType
+			? items.filter(item=>item.type===searchType)
+			: items;
 
 		const onChange = this.props.onChange;
 		return(
@@ -39,12 +54,12 @@ class List extends React.Component {
 				</tr>
 				{
 					items.map((item, index) =>
-						<ListRow key={`${item.value}${item.label}`} index={index} item={item} onDelete={() => this.onDelete(index)} onChange={onChange}/>
+						<ListRow key={`${item.type}${item.text}`} index={index} item={item} onDelete={() => this.onDelete(index)} onChange={onChange}/>
 					)
 				}
 				</tbody>
 			</table>
-			<Radio />
+			<Radio onChangeRadio={this.onChangeRadio}/>
 			</div>
 		)
 	}
