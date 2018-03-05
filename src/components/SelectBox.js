@@ -5,7 +5,7 @@ export default function SelectBox(props) {
 	const value = props.value;
 	const onChange = props.onChange;
 	return (
-		<select value={value} onChange={e => onChange(e.target.value)}>
+		<select className='select_box' value={value} onChange={e => onChange(e.target.value)}>
 			{options.map(item => {
 				return (
 					<option key={`${item.value}${item.label}`} value={item.value}>

@@ -7,7 +7,7 @@ export default function Radio(props) {
 		<div className='radio-boxes-wrapper'>
 			{types.map((type,index) =>
 				<div key={`${type.value}${type.label}`}>
-					<label htmlFor={type.value}>{type.label}</label>
+					<label htmlFor={type.value} className='priority_type_label'>{type.label}</label>
 					<input type="radio"
 						   id={type.value}
 						   name="importanceType"

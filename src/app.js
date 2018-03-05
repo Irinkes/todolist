@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './components/List'
-import UserInput from "./components/UserInput";
+import List from './containers/List'
+import UserInput from "./containers/UserInput";
 
 
 
