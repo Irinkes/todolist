@@ -22,8 +22,9 @@ class List extends React.Component {
 		});
 	}
 
-	onDelete(index){
-		this.props.onDelete(index);
+	onDelete(index, items){
+		this.props.onDelete(index, items);
+		console.log(`indexOnDelete:${items}`);
 	}
 
 	render() {
@@ -36,6 +37,8 @@ class List extends React.Component {
 		items = searchType
 			? items.filter(item=>item.type===searchType)
 			: items;
+
+		console.log(items);
 
 		const onChange = this.props.onChange;
 		return(
@@ -54,7 +57,7 @@ class List extends React.Component {
 				</tr>
 				{
 					items.map((item, index) =>
-						<ListRow key={`${item.type}${item.text}`} index={index} item={item} onDelete={() => this.onDelete(index)} onChange={onChange}/>
+						<ListRow key={`${item.type}${item.text}`} index={index} item={item} onDelete={() => this.onDelete(index, items)} onChange={onChange}/>
 					)
 				}
 				</tbody>
