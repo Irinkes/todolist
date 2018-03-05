@@ -15,17 +15,19 @@ class UserInput extends React.Component {
 	}
 
 	onAddItem =() =>{
-		const newItem = {
-			text: this.state.toDoText,
-			type: this.state.toDoType,
-		};
-		const onSubmit = this.props.onSubmit;
-		this.setState(
-			{
-				toDoText: undefined,
-			},
-			() => onSubmit(newItem),
-		);
+		if (this.state.toDoType && this.state.toDoText) {
+			const newItem = {
+				text: this.state.toDoText,
+				type: this.state.toDoType,
+			};
+			const onSubmit = this.props.onSubmit;
+			this.setState(
+				{
+					toDoText: '',
+				},
+				() => onSubmit(newItem),
+			);
+		}
 	};
 
 
