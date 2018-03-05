@@ -2,7 +2,7 @@ import React from 'react';
 import types from '../constants/types';
 
 export default function Radio(props) {
-	// const types = types;
+	const onChangeRadio = props.onChangeRadio;
 	return (
 		<div className='radio-boxes-wrapper'>
 			{types.map((type,index) =>
@@ -11,7 +11,8 @@ export default function Radio(props) {
 					<input type="radio"
 						   id={type.value}
 						   name="importanceType"
-						   value={type.value} />
+						   value={type.value}
+						   onClick={e => onChangeRadio(e.target.value)}/>
 				</div>
 			)}
 		</div>
