@@ -29,15 +29,15 @@ class App extends React.Component {
 		this.setState({
 			items: [...items, todo],
 		});
-		console.log(items);
+
 	};
 
-	onDelete(index){
-		const itemsArr = [...this.state.items];
-		itemsArr.splice(index, 1)
+	onDelete(index, items){
+		const filteredItems = [...items];
+		filteredItems.splice(index, 1);
 		this.setState({
-			items: itemsArr
-		})
+			items: filteredItems
+		},console.log(`indexonApp: ${JSON.stringify(filteredItems)}`))
 	}
 
 
