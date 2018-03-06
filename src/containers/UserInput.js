@@ -37,6 +37,7 @@ class UserInput extends React.Component {
 		return (
 			<div className='todolist_form'>
 				<TextBox
+					placeholder={'Введите задание'}
 					value={toDoText}
 					onChange={value => this.setState({ toDoText: value })}
 				/>

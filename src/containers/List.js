@@ -58,7 +58,7 @@ class List extends React.Component {
 					</tr>
 					{
 						items.map((item, index) =>
-							<ListRow key={`${item.type}${item.text}`} index={index} item={item} onDelete={() => this.onDelete(index, items)} onChange={onChange}/>
+							<ListRow key={`${item.type}${item.text}${index}`} index={index} item={item} onDelete={() => this.onDelete(index, items)} onChange={onChange}/>
 						)
 					}
 					</tbody>

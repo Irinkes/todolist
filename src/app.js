@@ -9,7 +9,6 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userText: '',
 			items: []
 		}
 		this.onSubmit = this.onSubmit.bind(this)
